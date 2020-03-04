@@ -1,3 +1,6 @@
 [submodule "dss"]
 	path = lib/dss
 	url = https://github.com/makerdao/dss.git
+[submodule "lib/ds-chief"]
+	path = lib/ds-chief
+	url = https://github.com/dapphub/ds-chief.git
