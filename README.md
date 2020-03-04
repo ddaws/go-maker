@@ -2,7 +2,7 @@
 
 > Golang bindings to the Multi-Colatoral Dai stablecoin system
 
-**Note:** This library is still under development and currently only support Vat access
+**Note:** This library is still under development and currently supports Vat (central holdings), Pot (DSR), and Jug (Stability Fee) access
 
 ## Usage 
 
@@ -41,6 +41,19 @@ For the complete example check out the `examples/` directory!
 
 - Autogenerate maker/load.go for easy reference and loading of deployed contracts
 - Add support for the complete MCD system of contracts
+  - [ ] Cat
+  - [ ] Dai
+  - [ ] End
+  - [ ] Flap
+  - [ ] Flip
+  - [ ] Flop
+  - [ ] Join
+  - [x] Jug
+  - [ ] Lib
+  - [x] Pot
+  - [ ] Spot
+  - [x] Vat
+  - [ ] Vow 
 
 ## Developing 
 
