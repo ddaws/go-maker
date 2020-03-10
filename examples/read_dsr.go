@@ -48,10 +48,13 @@ func main() {
 	log.Printf("DSR (per second): %s", dsr.Text(10))
 
 	// Convert to float64. This makes our calculations simpler, but much less precise!
-	f := big.Float{}
-	f.SetInt(dsr)
-	rate, _ := f.Float64()
+	rateScaled, _ := new(big.Float).SetInt(dsr).Float64()
+	perSecondRate := rateScaled / math.Pow(10, maker.RayScale)
+	secondsInYear := float64(365 * 24 * 60 * 60)
 
-	secondsInYear := 365 * 24 * 60 * 60
-	log.Printf("DSR (annualized): %.12f", math.Pow(rate / math.Pow(10, 27), float64(secondsInYear)))
+	// Round to the nearest 10th of a %
+	approxAnnualizedRate := math.Pow(perSecondRate, secondsInYear)
+	annualizedRate := math.Round(approxAnnualizedRate*1000) / 1000
+
+	log.Printf("DSR (annualized): %.3f", annualizedRate)
 }
