@@ -1,6 +1,9 @@
 package maker
 
-import "math/big"
+import (
+	"math"
+	"math/big"
+)
 
 // https://github.com/makerdao/dss/blob/master/DEVELOPING.md#units
 const (
@@ -12,34 +15,7 @@ const (
 	RadScale = 45
 )
 
-type Ray struct {
-	*big.Int
-}
-
-type Wad struct {
-	*big.Int
-}
-
-type Rad struct {
-	*big.Int
-}
-
-// Mul implements standard integer multiplication of fixed-point precision integers in units of wad.
-func (w *Wad) Mul(r *Ray) *Rad {
-	return nil
-}
-
-// RMul implements fixed-point precision multiplication of a Wad and a Ray where precision is lost.
-func (w *Wad) RMul(r *Ray) *Wad {
-	return nil
-}
-
-// RMul implements fixed-point precision multiplication of a Ray and a Ray where precision is lost.
-func (r *Ray) RMul(ray *Ray) *Ray {
-	return nil
-}
-
-// RMul implements fixed-point precision multiplication of a Rad and a Ray where precision is lost.
-func (r *Rad) RMul(ray *Ray) *Rad {
-	return nil
-}
+var (
+	// One unit of Ray
+	One = big.NewInt(int64(math.Pow(10, RayScale)))
+)
