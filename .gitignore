@@ -1,2 +1,5 @@
+
+# Temporary directories created when compiling Solidity contracts
 build/
+out/
 tmp/

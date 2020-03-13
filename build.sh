@@ -19,3 +19,10 @@ abigen --pkg maker --type Jug \
   --bin build/Jug.bin \
   --alias vat=VatAddress,vow=VowAddress \
   --out maker/jug.go
+
+solc --abi --bin --overwrite -o build/ lib/dss/src/flop.sol
+abigen --pkg maker --type Flopper \
+  --abi build/Flopper.abi \
+  --bin build/Flopper.bin \
+  --alias vow=VowAddress \
+  --out maker/flop.go
