@@ -45,8 +45,8 @@ For the complete example check out the `examples/` directory!
   - [ ] Dai
   - [ ] End
   - [ ] Flap
-  - [ ] Flip
-  - [ ] Flop
+  - [x] Flip
+  - [x] Flop
   - [ ] Join
   - [x] Jug
   - [ ] Lib

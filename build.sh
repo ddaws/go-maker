@@ -27,4 +27,8 @@ abigen --pkg maker --type Flopper \
   --alias vow=VowAddress \
   --out maker/flop.go
 
-
+solc --abi --bin --overwrite -o out/ lib/dss/src/flip.sol
+abigen --pkg maker --type Flipper \
+  --abi out/Flipper.abi \
+  --bin out/Flipper.bin \
+  --out maker/flip.go
