@@ -6,23 +6,25 @@
 abigen --sol=./lib/dss/src/vat.sol --pkg=maker --type=Vat --out=maker/vat.go
 
 # Generate Pot and Jug contracts in two steps to prevent also generating bindings for the DappSys library contracts
-solc --abi --bin --overwrite -o build/ lib/dss/src/pot.sol
+solc --abi --bin --overwrite -o out/ lib/dss/src/pot.sol
 abigen --pkg maker --type Pot \
-  --abi build/Pot.abi \
-  --bin build/Pot.bin \
+  --abi out/Pot.abi \
+  --bin out/Pot.bin \
   --alias Pie=TotalPie \
   --out maker/pot.go
 
-solc --abi --bin --overwrite -o build/ lib/dss/src/jug.sol
+solc --abi --bin --overwrite -o out/ lib/dss/src/jug.sol
 abigen --pkg maker --type Jug \
-  --abi build/Jug.abi \
-  --bin build/Jug.bin \
+  --abi out/Jug.abi \
+  --bin out/Jug.bin \
   --alias vat=VatAddress,vow=VowAddress \
   --out maker/jug.go
 
-solc --abi --bin --overwrite -o build/ lib/dss/src/flop.sol
+solc --abi --bin --overwrite -o out/ lib/dss/src/flop.sol
 abigen --pkg maker --type Flopper \
-  --abi build/Flopper.abi \
-  --bin build/Flopper.bin \
+  --abi out/Flopper.abi \
+  --bin out/Flopper.bin \
   --alias vow=VowAddress \
   --out maker/flop.go
+
+
