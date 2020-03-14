@@ -33,7 +33,7 @@ func main() {
 		log.Fatalln("You must specify a valid project ID")
 	}
 
-	infuraAddr := fmt.Sprintf(InfuraWebSocketAddr, *network, *projectID)
+	infuraAddr := fmt.Sprintf(infuraWebSocketAddr, *network, *projectID)
 	client, err := ethclient.Dial(infuraAddr)
 	if err != nil {
 		log.Fatalln(err)

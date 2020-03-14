@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	InfuraWebSocketAddr = "wss://%s.infura.io/ws/v3/%s"
+	infuraWebSocketAddr = "wss://%s.infura.io/ws/v3/%s"
 )
 
 func main() {

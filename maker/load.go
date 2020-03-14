@@ -27,3 +27,11 @@ func LoadJug(client *ethclient.Client) (*Jug, error) {
 func LoadJugCaller(client *ethclient.Client) (*JugCaller, error) {
 	return NewJugCaller(JugAddress, client)
 }
+
+func LoadFlipperEthA(client *ethclient.Client) (*Flipper, error) {
+	return NewFlipper(FlipEthAAddress, client)
+}
+
+func LoadFlipperEthACaller(client *ethclient.Client) (*FlipperCaller, error) {
+	return NewFlipperCaller(FlipEthAAddress, client)
+}
